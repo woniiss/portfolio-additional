@@ -3,8 +3,8 @@
 
 /* 기본 설정 */
 body {
-  margin: 0;
-  padding: 0;
+  margin: 24;
+  padding: 16;
   background-color: #FCFEFF; /* 배경색 */
   font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   color: #1B1B1D; /* 기본 텍스트 색상 */
