@@ -169,6 +169,14 @@ body{
   flex-direction:column;
 }
 
+/* 카드가 a 태그일 때 기본 링크 스타일 제거 */
+.card {
+  display: block;          /* a를 블록으로 */
+  text-decoration: none;   /* 밑줄 제거 */
+  color: inherit;          /* 글자색 상속 */
+}
+
+
 /* hover */
 .card:hover{
   transform: translateY(-8px);
