@@ -43,7 +43,7 @@ nav a {
   font-weight: 700;
   margin-right: 20px;
   text-decoration: none;
-  color: #1B1B1D;
+  color: #1B1B1D !important; /* 색상 강제 적용 */
   transition: color 0.2s ease;
 }
 
