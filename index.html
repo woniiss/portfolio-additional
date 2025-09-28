@@ -1,42 +1,99 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>포트폴리오 작품 관련 링크 - 김다원</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>포트폴리오 — 다원</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="site-header">
-    <h1>포트폴리오 작품 관련 링크 - 김다원</h1>
-    <nav>
-      <ul class="nav">
-        <li><a href="project1.html">Project 1</a></li>
-        <li><a href="project2.html">Project 2</a></li>
-        <li><a href="project3.html">Project 3</a></li>
-        <li><a href="project4.html">Project 4</a></li>
-        <li><a href="project5.html">Project 5</a></li>
-        <li><a href="project6.html">Project 6</a></li>
-      </ul>
-    </nav>
+    <div class="container header-inner">
+      <div class="brand">
+        <h1 class="site-title">홈페이지 타이틀</h1>
+        <p class="site-sub">인사 문구 한 줄</p>
+      </div>
+
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="project1.html" class="nav-link">Project 1</a>
+        <a href="project2.html" class="nav-link">Project 2</a>
+        <a href="project3.html" class="nav-link">Project 3</a>
+        <a href="project4.html" class="nav-link">Project 4</a>
+        <a href="project5.html" class="nav-link">Project 5</a>
+        <a href="project6.html" class="nav-link">Project 6</a>
+      </nav>
+    </div>
   </header>
 
   <main class="container">
-    <section class="intro">
-      <p>안녕하세요. 삼성전자 비주얼 인터랙션 디자인 직무 지원자 김다원입니다.</p>
-    </section>
+    <p class="lead">여기는 간단한 소개 문장(상단 메뉴 아래의 한 줄 문장). 방문자에게 포트폴리오 성격을 안내합니다.</p>
 
-    <section class="project-grid">
-      <article class="card"><a href="project1.html"><img src="images/p1-thumb.jpg" alt=""><h3>Project 1</h3><p>짧은 설명</p></a></article>
-      <article class="card"><a href="project2.html"><img src="images/p2-thumb.jpg" alt=""><h3>Project 2</h3><p>짧은 설명</p></a></article>
-      <article class="card"><a href="project3.html"><img src="images/p3-thumb.jpg" alt=""><h3>Project 3</h3><p>짧은 설명</p></a></article>
-      <article class="card"><a href="project4.html"><img src="images/p4-thumb.jpg" alt=""><h3>Project 4</h3><p>짧은 설명</p></a></article>
-      <article class="card"><a href="project5.html"><img src="images/p5-thumb.jpg" alt=""><h3>Project 5</h3><p>짧은 설명</p></a></article>
-      <article class="card"><a href="project6.html"><img src="images/p6-thumb.jpg" alt=""><h3>Project 6</h3><p>짧은 설명</p></a></article>
+    <section class="card-grid" aria-label="프로젝트 목록">
+      <!-- 카드 예시 6개 (이미지 파일명 꼭 images/에 올려줘) -->
+      <article class="card">
+        <img src="images/p1.jpg" alt="Project 1 썸네일">
+        <div class="card-body">
+          <h3 class="card-title">Project 1</h3>
+          <p class="card-desc">짧은 설명이 여기에 들어갑니다.</p>
+          <a class="card-cta" href="project1.html">자세히 보기</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="images/p2.jpg" alt="Project 2 썸네일">
+        <div class="card-body">
+          <h3 class="card-title">Project 2</h3>
+          <p class="card-desc">짧은 설명이 여기에 들어갑니다.</p>
+          <a class="card-cta" href="project2.html">자세히 보기</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="images/p3.jpg" alt="Project 3 썸네일">
+        <div class="card-body">
+          <h3 class="card-title">Project 3</h3>
+          <p class="card-desc">짧은 설명이 여기에 들어갑니다.</p>
+          <a class="card-cta" href="project3.html">자세히 보기</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="images/p4.jpg" alt="Project 4 썸네일">
+        <div class="card-body">
+          <h3 class="card-title">Project 4</h3>
+          <p class="card-desc">짧은 설명이 여기에 들어갑니다.</p>
+          <a class="card-cta" href="project4.html">자세히 보기</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="images/p5.jpg" alt="Project 5 썸네일">
+        <div class="card-body">
+          <h3 class="card-title">Project 5</h3>
+          <p class="card-desc">짧은 설명이 여기에 들어갑니다.</p>
+          <a class="card-cta" href="project5.html">자세히 보기</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="images/p6.jpg" alt="Project 6 썸네일">
+        <div class="card-body">
+          <h3 class="card-title">Project 6</h3>
+          <p class="card-desc">짧은 설명이 여기에 들어갑니다.</p>
+          <a class="card-cta" href="project6.html">자세히 보기</a>
+        </div>
+      </article>
     </section>
   </main>
 
   <footer class="site-footer">
+    <div class="container">
+      <p class="footer-text">감사합니다</p>
+    </div>
+  </footer>
+</body>
+</html>
+
     <p>감사합니다</p>
   </footer>
 </body>
