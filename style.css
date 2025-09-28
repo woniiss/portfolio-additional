@@ -1,139 +1,255 @@
-/* Pretendard 웹폰트 불러오기 */
+/* Pretendard 웹폰트 로드 (CDN) */
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
-/* 기본 설정 */
-body {
-  margin: 24;
-  padding: 16;
-  background-color: #FCFEFF; /* 배경색 */
-  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-  color: #1B1B1D; /* 기본 텍스트 색상 */
-  line-height: 1.6;
+/* ===== 디자인 토큰 (변수로 관리) ===== */
+:root{
+  --bg: #FCFEFF;
+  --text-900: #1B1B1D; /* 가장 진한 텍스트 */
+  --text-700: #34373A;
+  --text-500: #5F6367;
+  --text-300: #9C9CA4;
+  --card-shadow: 4px 4px 24px 0 rgba(55,57,61,0.08);
+
+  --max-content-width: 1040px; /* 1440 - 200*2 = 1040 */
+  --gutter-small: 40px;
+  --gutter-large: 200px;
+
+  --radius: 12px;
 }
 
-/* 컨테이너 */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
+/* ===== 기본 스타일 ===== */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background-color:var(--bg);
+  color:var(--text-900);
+  font-family:'Pretendard', system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans KR', sans-serif;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
 }
 
-/* 헤더 & 네비게이션 */
-header {
-  background: #FCFEFF;
-  border-bottom: 1px solid #E5E7EB;
-  padding: 20px 0;
+/* 컨테이너
+   - 넓은 화면에서는 좌우 margin이 200px(= (viewport - max-content-width)/2)
+   - 좁아지면 padding 40px로 유지 */
+.container{
+  max-width: var(--max-content-width);
+  margin: 40px auto; /* 상하 margin 40px */
+  padding: 0;        /* 패딩은 반응형 미디어쿼리에서 제어 */
+}
+
+/* 작은 화면일 때는 화면 양쪽에 40px 패딩을 줌 */
+@media (max-width: 1120px){
+  .container{
+    max-width: none;
+    margin: 40px auto;
+    padding: 0 var(--gutter-small);
+  }
+}
+
+/* ===== 헤더/네비 ===== */
+.site-header{
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  background: var(--bg);
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 50;
 }
 
-header h1 {
-  font-size: 24px;
-  font-weight: 700; /* bold */
-  margin: 0;
-}
-
-nav {
-  margin-top: 8px;
-}
-
-nav a {
-  font-size: 18px;
-  font-weight: 700;
-  margin-right: 20px;
-  text-decoration: none;
-  color: #1B1B1D !important; /* 색상 강제 적용 */
-  transition: color 0.2s ease;
-}
-
-nav a:hover {
-  color: #0366d6; /* hover 시 포인트 컬러 */
-}
-
-/* 메뉴 바 아래 문장 */
-.sub-text {
-  font-size: 16px;
-  font-weight: 500; /* medium */
-  margin: 16px 0 32px;
-  color: #1B1B1D;
-}
-
-/* 카드 레이아웃 */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+.header-inner{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
   gap: 24px;
-  margin-bottom: 40px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
-.card {
-  background: #fff;
-  border: 1px solid #E5E7EB;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  cursor: pointer;
+/* 좌측 브랜드 영역 */
+.brand {
+  display:flex;
+  flex-direction:column;
 }
 
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+/* 메인 타이틀 20px bold (#1B1B1D) */
+.site-title{
+  font-size:20px;
+  font-weight:700;
+  color:var(--text-900);
+  margin: 4px 0;
 }
 
-.card img {
-  width: 100%;
-  display: block;
+/* 서브 텍스트 12px semibold (#34373A) */
+.site-sub{
+  font-size:12px;
+  font-weight:600; /* semibold */
+  color:var(--text-700);
+  margin:0;
 }
 
-.card-content {
-  padding: 16px;
+/* 네비: 오른쪽 메뉴 (가로 나열) */
+.site-nav{
+  display:flex;
+  align-items:center;
+  gap: 24px;
+  margin-left: auto;
+  padding-top:4px;
 }
 
-.card-title {
-  font-size: 16px;
-  font-weight: 700; /* bold */
-  margin: 0 0 8px;
+/* 메뉴 링크 - 16px medium (#34373A) */
+.site-nav .nav-link{
+  font-size:16px;
+  font-weight:500; /* medium */
+  color:var(--text-700);
+  text-decoration:none;
+  padding:6px 8px;
+  border-radius:6px;
+  transition: color .16s ease, background .16s ease, transform .12s ease;
 }
 
-.card-desc {
-  font-size: 12px;
-  font-weight: 400; /* regular */
-  margin: 0;
-  color: #4B5563; /* 살짝 연한 회색 글자 */
+/* 방문/기본 상태 고정 색상 (브라우저 기본 파란색 방지) */
+.site-nav .nav-link:link,
+.site-nav .nav-link:visited {
+  color: var(--text-700);
 }
 
-/* 버튼 스타일 */
-.button {
-  display: inline-block;
-  padding: 10px 18px;
-  background: #0366d6;
-  color: #fff;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 600;
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.button:hover {
-  background: #024eac;
+/* hover 시 효과 */
+.site-nav .nav-link:hover{
+  color: var(--text-900);
+  background: rgba(3,102,214,0.06);
   transform: translateY(-2px);
 }
 
-/* 반응형 */
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 20px;
-  }
+/* active (선택된 메뉴) - 더 진한 색 & 강조 */
+.site-nav .nav-link.active{
+  color: var(--text-900);
+  background: rgba(27,27,29,0.04);
+  font-weight:700;
+  box-shadow: inset 0 -2px 0 rgba(27,27,29,0.04);
+}
 
-  nav a {
-    font-size: 16px;
-    margin-right: 12px;
-  }
+/* ===== 상단 메뉴 아래 텍스트 (한 줄) ===== */
+/* 메인 페이지의 설명 문구 */
+.lead{
+  font-size:16px; /* 요청상 상단 메뉴 아래 한 줄은 16px medium(이전 대화) -> 여기는 16px을 유지 */
+  font-weight:500;
+  color:var(--text-700);
+  margin: 24px 0 28px;
+}
 
-  .sub-text {
-    font-size: 14px;
+/* ===== 카드 그리드 ===== */
+.card-grid{
+  display:grid;
+  gap:24px;
+  grid-template-columns: repeat(3, 1fr);
+  align-items:start;
+}
+
+/* 반응형 그리드 */
+@media (max-width:1100px){
+  .card-grid{
+    grid-template-columns: repeat(2, 1fr);
   }
 }
+@media (max-width:700px){
+  .card-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 카드 스타일 */
+.card{
+  background: #fff;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: transform .18s ease, box-shadow .18s ease;
+  display:flex;
+  flex-direction:column;
+}
+
+/* hover */
+.card:hover{
+  transform: translateY(-8px);
+  box-shadow: 8px 12px 40px rgba(55,57,61,0.12);
+}
+
+/* 카드 이미지(썸네일) */
+.card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  display:block;
+  background:#ececec;
+}
+
+/* 카드 내용 영역 */
+.card-body{
+  padding:16px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  flex:1;
+}
+
+/* 카드 타이틀 16px semibold (#1B1B1D) */
+.card-title{
+  font-size:16px;
+  font-weight:600; /* semibold */
+  color:var(--text-900);
+  margin:0;
+}
+
+/* 카드 설명 12px medium (#5F6367) */
+.card-desc{
+  font-size:12px;
+  font-weight:500; /* medium */
+  color:var(--text-500);
+  margin:0;
+  flex:1;
+}
+
+/* 카드 내 CTA 버튼 (작은 버튼) */
+.card-cta{
+  display:inline-block;
+  margin-top:10px;
+  padding:8px 12px;
+  background:transparent;
+  color:var(--text-700);
+  text-decoration:none;
+  font-weight:600;
+  border-radius:8px;
+  border: 1px solid rgba(0,0,0,0.06);
+  transition: background .16s ease, transform .12s ease, color .12s ease;
+}
+.card-cta:hover{
+  background: rgba(3,102,214,0.08);
+  color: #0366d6;
+  transform: translateY(-3px);
+}
+
+/* ===== 푸터 ===== */
+.site-footer{
+  border-top:1px solid rgba(0,0,0,0.06);
+  margin-top:40px;
+  padding:28px 0;
+  background: var(--bg);
+}
+.footer-text{
+  font-size:12px;
+  font-weight:600; /* semibold */
+  color:var(--text-300);
+  text-align:center;
+  margin:0;
+}
+
+/* 유틸: 작은 텍스트 색상 변경용 클래스(사용 팁) */
+.text-900{ color: var(--text-900) }
+.text-700{ color: var(--text-700) }
+.text-500{ color: var(--text-500) }
+.text-300{ color: var(--text-300) }
+
+/* 접근성: 링크 포커스 스타일 */
+a:focus{ outline: 3px solid rgba(3,102,214,0.16); outline-offset:2px }
+
