@@ -1,17 +1,139 @@
-/* style.css */
-*{box-sizing:border-box;margin:0;padding:0}
-body{
-  background-color: #FCFEFF;
-  font-family: 'Pretendard', system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Noto Sans KR',sans-serif;color:#1B1B1D;font-size: 16px; line-height:1.5}
-.site-header{background:#fafafa;padding:20px;border-bottom:1px solid #eee}
-.site-header h1{font-size:20px}
-.nav{list-style:none;display:flex;gap:10px;margin-top:8px}
-.nav a{text-decoration:none;color:#0366d6}
-.container{max-width:900px;margin:28px auto;padding:0 16px}
-.intro{margin-bottom:20px}
-.project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
-.card{border:1px solid #eee;border-radius:8px;overflow:hidden;background:#fff}
-.card a{display:block;padding:12px;text-decoration:none;color:inherit}
-.card img{width:100%;height:120px;object-fit:cover;background:#f0f0f0}
-.card h3{margin-top:8px;font-size:16px}
-.site-footer{text-align:center;padding:18px;border-top:1px solid #eee;margin-top:28px;color:#666}
+/* Pretendard 웹폰트 불러오기 */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+/* 기본 설정 */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #FCFEFF; /* 배경색 */
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  color: #1B1B1D; /* 기본 텍스트 색상 */
+  line-height: 1.6;
+}
+
+/* 컨테이너 */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* 헤더 & 네비게이션 */
+header {
+  background: #FCFEFF;
+  border-bottom: 1px solid #E5E7EB;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  font-size: 24px;
+  font-weight: 700; /* bold */
+  margin: 0;
+}
+
+nav {
+  margin-top: 8px;
+}
+
+nav a {
+  font-size: 18px;
+  font-weight: 700;
+  margin-right: 20px;
+  text-decoration: none;
+  color: #1B1B1D;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: #0366d6; /* hover 시 포인트 컬러 */
+}
+
+/* 메뉴 바 아래 문장 */
+.sub-text {
+  font-size: 16px;
+  font-weight: 500; /* medium */
+  margin: 16px 0 32px;
+  color: #1B1B1D;
+}
+
+/* 카드 레이아웃 */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100%;
+  display: block;
+}
+
+.card-content {
+  padding: 16px;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 700; /* bold */
+  margin: 0 0 8px;
+}
+
+.card-desc {
+  font-size: 12px;
+  font-weight: 400; /* regular */
+  margin: 0;
+  color: #4B5563; /* 살짝 연한 회색 글자 */
+}
+
+/* 버튼 스타일 */
+.button {
+  display: inline-block;
+  padding: 10px 18px;
+  background: #0366d6;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.button:hover {
+  background: #024eac;
+  transform: translateY(-2px);
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 20px;
+  }
+
+  nav a {
+    font-size: 16px;
+    margin-right: 12px;
+  }
+
+  .sub-text {
+    font-size: 14px;
+  }
+}
