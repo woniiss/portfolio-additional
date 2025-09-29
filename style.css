@@ -307,3 +307,17 @@ a:focus{ outline: 3px solid rgba(3,102,214,0.16); outline-offset:2px }
   border: 0;
 }
 
+/* 16:9 영상 */
+.ratio-16-9::before { padding-top: 56.25%; }
+
+/* 1920 x 2178 영상 */
+.ratio-1920-2178::before { padding-top: 113.4%; }
+
+/* 1920 x 708 영상 */
+.ratio-1920-708::before { padding-top: 36.87%; }
+
+/* 1920 x 1466 영상 */
+.ratio-1920-1466::before { padding-top: 76.35%; }
+
+/* 1920 x 1654 영상 */
+.ratio-1920-1654::before { padding-top: 86.14%; }
