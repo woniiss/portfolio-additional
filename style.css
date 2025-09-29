@@ -237,6 +237,16 @@ body{
   transform: translateY(-3px);
 }
 
+.video-wrapper {
+  width: 100%; /* 또는 px로 고정 가능 */
+  max-width: 1080px; /* 필요하면 최대 너비 지정 */ 
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: auto; /* 비율 따라 높이 자동 조절 */
+}
+
 /* ===== 푸터 ===== */
 .site-footer{
   border-top:1px solid rgba(0,0,0,0.06);
