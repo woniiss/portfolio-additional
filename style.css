@@ -258,7 +258,7 @@ body{
   display: block; /* 위아래 공백 제거 */
   width: 100%;
   height: auto;
-
+}
 /* ===== 푸터 ===== */
 .site-footer{
   border-top:1px solid rgba(0,0,0,0.06);
@@ -282,4 +282,25 @@ body{
 
 /* 접근성: 링크 포커스 스타일 */
 a:focus{ outline: 3px solid rgba(3,102,214,0.16); outline-offset:2px }
+
+  
+  /* 프로젝트 페이지 전용: iframe 간격/높이 강제 리셋 */
+.project-page .video-wrapper,
+.project-page .video-wrapper * {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 0 !important;
+}
+
+.project-page iframe {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  vertical-align: top !important;
+}
+
 
