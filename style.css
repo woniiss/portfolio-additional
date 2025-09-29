@@ -237,28 +237,9 @@ body{
   transform: translateY(-3px);
 }
 
-.video-wrapper {
-  width: 100%; /* 또는 px로 고정 가능 */
-  max-width: 1920px; /* 필요하면 최대 너비 지정 */ 
-}
-
-.video-wrapper iframe {
-  width: 100%;
-  height: auto; /* 비율 따라 높이 자동 조절 */
-   display: block; /* inline 기본 여백 제거 */
-}
-
 /* 홈 화면 카드 전용 */
 .home .card { margin: 24px; }
 
-/* 프로젝트 화면 영상 전용 */
-.project-page .video-wrapper { margin: 0; }
-
-.project-page .video-wrapper iframe {
-  display: block; /* 위아래 공백 제거 */
-  width: 100%;
-  height: auto;
-}
 /* ===== 푸터 ===== */
 .site-footer{
   border-top:1px solid rgba(0,0,0,0.06);
@@ -283,7 +264,6 @@ body{
 /* 접근성: 링크 포커스 스타일 */
 a:focus{ outline: 3px solid rgba(3,102,214,0.16); outline-offset:2px }
 
-  
 /* ===== 영상 비율 공통 ===== */
 .video-wrapper {
   position: relative;
@@ -321,3 +301,7 @@ a:focus{ outline: 3px solid rgba(3,102,214,0.16); outline-offset:2px }
 
 /* 1920 x 1654 영상 */
 .ratio-1920-1654::before { padding-top: 86.14%; }
+
+/* 1920 x 1080 영상 (추가) */
+.ratio-1920-1080::before { padding-top: 56.25%; }
+
