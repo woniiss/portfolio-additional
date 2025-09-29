@@ -254,6 +254,11 @@ body{
 /* 프로젝트 화면 영상 전용 */
 .project-page .video-wrapper { margin: 0; }
 
+.project-page .video-wrapper iframe {
+  display: block; /* 위아래 공백 제거 */
+  width: 100%;
+  height: auto;
+
 /* ===== 푸터 ===== */
 .site-footer{
   border-top:1px solid rgba(0,0,0,0.06);
