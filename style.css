@@ -284,23 +284,26 @@ body{
 a:focus{ outline: 3px solid rgba(3,102,214,0.16); outline-offset:2px }
 
   
-  /* 프로젝트 페이지 전용: iframe 간격/높이 강제 리셋 */
-.project-page .video-wrapper,
-.project-page .video-wrapper * {
-  margin: 0 !important;
-  padding: 0 !important;
-  line-height: 0 !important;
+/* ===== 영상 비율 공통 ===== */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1920px; /* 필요시 최대 너비 제한 */
+  margin: 0 auto 24px; /* 영상 사이 간격 */
 }
 
-.project-page iframe {
-  display: block !important;
-  width: 100% !important;
-  height: auto !important;
-  max-width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  border: 0 !important;
-  vertical-align: top !important;
+.video-wrapper::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%; /* 기본은 16:9 */
 }
 
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
 
