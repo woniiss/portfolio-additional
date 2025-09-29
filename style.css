@@ -239,13 +239,20 @@ body{
 
 .video-wrapper {
   width: 100%; /* 또는 px로 고정 가능 */
-  max-width: 1080px; /* 필요하면 최대 너비 지정 */ 
+  max-width: 1920px; /* 필요하면 최대 너비 지정 */ 
 }
 
 .video-wrapper iframe {
   width: 100%;
   height: auto; /* 비율 따라 높이 자동 조절 */
+   display: block; /* inline 기본 여백 제거 */
 }
+
+/* 홈 화면 카드 전용 */
+.home .card { margin: 24px; }
+
+/* 프로젝트 화면 영상 전용 */
+.project-page .video-wrapper { margin: 0; }
 
 /* ===== 푸터 ===== */
 .site-footer{
