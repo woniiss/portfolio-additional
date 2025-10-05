@@ -94,7 +94,7 @@ body{
   font-size:18px;
   font-weight:700;
   color:var(--text-900);
-  margin: 4px 0;
+  margin: 2px 0;
 }
 
 /* 내용 텍스트2 14px medium (#5B5F63) */
@@ -102,7 +102,7 @@ body{
   font-size:14px;
   font-weight:500; /* medium */
   color:var(--text-400);
-  margin:2;
+  margin:0;
 }
 
 
