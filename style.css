@@ -89,7 +89,7 @@ body{
 }
 
 /* 서브 텍스트2 14px medium (#34373A) */
-.site-subsub{
+.site-zsub{
   font-size:14px;
   font-weight:500; /* medium */
   color:var(--text-700);
