@@ -88,6 +88,15 @@ body{
   margin:0;
 }
 
+/* 서브 텍스트2 14px medium (#34373A) */
+.site-sub{
+  font-size:14px;
+  font-weight:500; /* medium */
+  color:var(--text-700);
+  margin:0;
+}
+
+
 /* 네비: 오른쪽 메뉴 (가로 나열) */
 .site-nav{
   display:flex;
