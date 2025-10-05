@@ -88,12 +88,20 @@ body{
   margin:0;
 }
 
+/* 내용 타이틀 18px bold (#1B1B1D) */
+.site-ztitle{
+  font-size:18px;
+  font-weight:700;
+  color:var(--text-900);
+  margin: 4px 0;
+}
+
 /* 서브 텍스트2 14px medium (#34373A) */
 .site-zsub{
   font-size:14px;
   font-weight:500; /* medium */
   color:var(--text-700);
-  margin:0;
+  margin:2;
 }
 
 
