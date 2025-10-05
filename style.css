@@ -8,6 +8,7 @@
   --text-700: #34373A;
   --text-500: #5F6367;
   --text-300: #9C9CA4;
+  --text-400: #5B5F63;
   --card-shadow: 4px 4px 24px 0 rgba(55,57,61,0.08);
 
   --max-content-width: 1040px; /* 1440 - 200*2 = 1040 */
@@ -96,11 +97,11 @@ body{
   margin: 4px 0;
 }
 
-/* 서브 텍스트2 14px medium (#34373A) */
+/* 내용 텍스트2 14px medium (#5B5F63) */
 .site-zsub{
   font-size:14px;
   font-weight:500; /* medium */
-  color:var(--text-700);
+  color:var(--text-400);
   margin:2;
 }
 
