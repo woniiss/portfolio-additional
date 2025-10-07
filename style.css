@@ -329,6 +329,7 @@ a:focus{ outline: 3px solid rgba(3,102,214,0.16); outline-offset:2px }
 .image-wrapper {
   position: relative;
   width: 100%;
+  overflow: hidden; /* 중요! 넘치는 부분 자르기 */
 }
 
 .image-wrapper::before {
@@ -344,4 +345,3 @@ a:focus{ outline: 3px solid rgba(3,102,214,0.16); outline-offset:2px }
   height: 100%;
   object-fit: cover;
 }
-
