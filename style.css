@@ -327,7 +327,11 @@ a:focus{ outline: 3px solid rgba(3,102,214,0.16); outline-offset:2px }
 .ratio-1920-184::before { padding-top: 9.58%; }
 
 /* 새 비율 추가 (1920 x 114) */
-.ratio-1920-114::before {  padding-top: 5.94%; }
+.ratio-1920-114::before { padding-top: 5.94%; }
+
+/* 1920 x 400 영상 */
+.ratio-1920-400::before { padding-top: 20.83%; }
+
 
 .image-wrapper {
   position: relative;
