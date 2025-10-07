@@ -329,6 +329,8 @@ a:focus{ outline: 3px solid rgba(3,102,214,0.16); outline-offset:2px }
 .image-wrapper {
   position: relative;
   width: 100%;
+  max-width: 1920px; /* 추가! */
+  margin: 0 auto;
   overflow: hidden; /* 중요! 넘치는 부분 자르기 */
 }
 
@@ -346,7 +348,3 @@ a:focus{ outline: 3px solid rgba(3,102,214,0.16); outline-offset:2px }
   object-fit: cover;
 }
 
-.project-detail {
-  max-width: 1920px;
-  margin: 0 auto; /* 가운데 정렬 */
-}
