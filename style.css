@@ -362,3 +362,10 @@ a:focus{ outline: 3px solid rgba(3,102,214,0.16); outline-offset:2px }
   object-fit: cover;
 }
 
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
