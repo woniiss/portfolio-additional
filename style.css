@@ -105,6 +105,13 @@ body{
   margin:0;
 }
 
+.footer-ztext{
+  font-size:12px;
+  font-weight:500; 
+  color:var(--text-300);
+  margin:0;
+}
+
 
 /* 네비: 오른쪽 메뉴 (가로 나열) */
 .site-nav{
