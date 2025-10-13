@@ -380,6 +380,8 @@ a:focus{ outline: 3px solid rgba(3,102,214,0.16); outline-offset:2px }
 /* 1920 x 1098 */
 .ratio-1920-1098::before { padding-top: 57.19%; }
 
+/* 1920 x 1036 */
+.ratio-1920-1036::before { padding-top: 53.96%; }
 
 
 .video-wrapper iframe {
