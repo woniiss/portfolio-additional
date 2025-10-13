@@ -407,6 +407,7 @@ a:focus{ outline: 3px solid rgba(3,102,214,0.16); outline-offset:2px }
 .image-wrapper::before {
   content: "";
   display: block;
+  padding-top: 84.11%;
 }
 
 /* 이미지가 비율 박스 안에 꽉 차도록 (영상 iframe과 동일 행동) */
