@@ -401,3 +401,6 @@ a:focus{ outline: 3px solid rgba(3,102,214,0.16); outline-offset:2px }
   max-width: none;          /* 전역 img 규칙 덮어쓰기 방지 */
 }
 
+/* 1920 x 1615 이미지/영상 */
+.ratio-1920-1615::before { padding-top: 84.11%; }
+
