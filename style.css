@@ -444,3 +444,47 @@ a:focus{ outline: 3px solid rgba(3,102,214,0.16); outline-offset:2px }
   max-width: none;          /* 전역 img 규칙 덮어쓰기 방지 */
 }
 
+
+/* ===== 반응형 헤더 수정 ===== */
+
+/* 기본 flex가 너무 빽빽할 때 줄바꿈 허용 */
+.header-inner {
+  flex-wrap: wrap;
+}
+
+/* 화면이 768px 이하로 줄어들면 헤더 구조 세로 정렬 */
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  /* 사이트 타이틀이 줄바꿈되어도 자연스럽게 보이게 */
+  .site-title {
+    font-size: 18px;
+    word-break: keep-all;
+    white-space: normal; /* 강제 줄바꿈 허용 */
+  }
+
+  /* 네비 메뉴는 왼쪽 정렬, 자동 줄바꿈 */
+  .site-nav {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 12px;
+  }
+
+  /* 너무 길게 나열되는 메뉴 글자 크기 살짝 줄이기 */
+  .site-nav .nav-link {
+    font-size: 14px;
+    padding: 4px 6px;
+  }
+}
+
+/* 아주 작은 화면(480px 이하)에서 타이틀 더 줄이기 */
+@media (max-width: 480px) {
+  .site-title {
+    font-size: 16px;
+  }
+}
+
