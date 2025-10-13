@@ -390,6 +390,20 @@ a:focus{ outline: 3px solid rgba(3,102,214,0.16); outline-offset:2px }
 /* 1920 x 1036 */
 .ratio-1920-1036::before { padding-top: 53.96%; }
 
+.ratio-1920-1192::before { padding-top: 62.08%; }
+
+.ratio-1920-820::before { padding-top: 42.71%; }
+
+.ratio-1920-2090::before { padding-top: 108.85%; }
+
+.ratio-1920-1820::before { padding-top: 94.79%; }
+
+.ratio-1920-1012::before { padding-top: 52.71%; }
+
+.ratio-1920-3076::before { padding-top: 160.21%; }
+
+
+
 
 .video-wrapper iframe {
   position: absolute;
